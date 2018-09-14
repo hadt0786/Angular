@@ -1,0 +1,72 @@
+<h2>Example of a Binding example Attribute Example</h2>
+
+<p> The component name is {{myAppTitle}}</p>
+
+<p> THE  binding array consist of {{BindingMaterial}}</p>
+
+<p><b>The Image property binding</b></p>
+
+<img [src] = "imageLink"/>
+
+<p><b>The text content property binding</b></p>
+
+<p [textContent] = "textContent"></p>
+
+<p>The atrributes on background</p>
+<p [style.background]="myBackground">GO GREEN ....</p>
+
+<!-- <p> Example on property binding on BUTTON</p>
+<button [disabled]='myButton'>CLick me</button> -->
+
+<!-- <input (keyup.enter)='mySaveFunction()'> -->
+
+<input #userInput (keyup.enter)="mySaveFunction()">
+
+<button class="w3-button w3-grey" (click)="mySaveFunction()">fhyfhfh</button>
+
+<p>The atrributes on Style background - font size, LeftMargin and Top Margin</p>
+<p [style.fontSize]="fontS">Font Changing....</p>
+
+<p>The atrributes on Style background - font size, LeftMargin and Top Margin</p>
+<p [style.marginLeft]="marginL">margin  Changing....</p>
+
+<p>The atrributes on Style background - font size, LeftMargin and Top Margin</p>
+<p [style.marginTop]="marginT">margin top Changing....</p>
+
+
+<h2> The Example of the Event bubbling</h2>
+<!-- 
+<div (click)="myDisplayButton()"> 
+  <button btn btn-class (click)="mySecondButton($event)">Second button</button>
+
+</div> -->
+<button class="btn btn-primary" (click)="mySecondButton($event)">Second button</button>
+
+
+<h2> Two way binding</h2>
+
+<input [(ngModel)] = "userInput" (keyup.enter) = "userkeypressed()"/>
+
+
+
+<!-- 
+<h2>Using event binding, handle the following events by having event handlers
+  • Mouse over
+  • Double click
+  • Change a HTML attribute of a text (ex: BackgroundColor) when the user click any of the
+  mouse events. Demonstrate view->business logic -> view binding</h2>
+
+<div [style.backgroundColor]="background()" >
+
+  <p>Mouse Over Click Button</p>
+  <button (onmouseover)="mouseHover()"> Ths is Hover button</button>
+  <hr>
+  <p>Double Click Button</p>
+  <button (ondbclick)="mouseDoubleClick()"> Ths is Hover button</button>
+  
+  <hr>
+  <!-- <p>Change a HTML attribute of a text (ex: BackgroundColor) when the user click any of the
+    mouse events. Demonstrate view->business logic -> view binding</p>
+  <button (onmouseout)="mouseOut()"> Ths is Hover button</button> -->
+
+

@@ -1,0 +1,46 @@
+
+<div class="w3-container w3-animate-bottom">
+  <table class="w3-table-all w3-card-4 ">
+    <thead>
+      <tr class="w3-cyan">
+        <th>Task Name</th>
+        <th>
+          <div  style="width: 10%" class="w3-dropdown-hover w3-bar-item">
+          <button  class="w3-button w3-cyan w3-padding">{{Category}} <i class="fa fa-angle-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <a href="#" (click)="changeCategory('All Category')" class="w3-bar-item w3-button">All Category</a>
+            <a href="#" (click)="changeCategory('Personal')" class="w3-bar-item w3-button">Personal</a>
+            <a href="#" (click)="changeCategory('Family')"class="w3-bar-item w3-button">Family</a>
+            <a href="#" (click)="changeCategory('Vacational')"class="w3-bar-item w3-button">Vacational</a>
+          </div>
+      </div></th>
+        <th><div style="width: 10%" class="w3-dropdown-hover w3-bar-item">
+            <button class="w3-button w3-cyan w3-padding" >{{Priority}} <i class="fa fa-angle-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4" >
+              <a href="#" (click)="changePriority('High')" class="w3-bar-item w3-button">High</a>
+              <a href="#" (click)="changePriority('Medium')" class="w3-bar-item w3-button">Medium</a>
+              <a href="#" (click)="changePriority('Low')" class="w3-bar-item w3-button">Low</a>
+            </div>
+        </div></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let item of items|async">
+      <td>{{item.taskname}}
+      <td>{{item.category}}
+      <td>{{item.priority}}
+      <td><button class="w3-button w3-red" (click)="firebaseDeleteCourse(item)"> &#10006; </button></td>
+    </tr>
+    <tr>
+      <td>Eve</td>
+      <td>Jackson</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <td>Adam</td>
+      <td>Johnson</td>
+      <td>67</td>
+    </tr>
+  </table>
+</div>
+
+

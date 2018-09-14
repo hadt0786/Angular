@@ -1,0 +1,40 @@
+<!-- <p>
+  {{profile | json}}
+</p> 
+-->
+<!-- 
+{ "login": "DivekJohns", "id": 39296126, "node_id": "MDQ6VXNlcjM5Mjk2MTI2",
+ "avatar_url": "https://avatars3.githubusercontent.com/u/39296126?v=4", 
+ "gravatar_id": "", "url": "https://api.github.com/users/DivekJohns", 
+ "html_url": "https://github.com/DivekJohns",
+  "followers_url": "https://api.github.com/users/DivekJohns/followers", 
+  "following_url": "https://api.github.com/users/DivekJohns/following{/other_user}", 
+  "gists_url": "https://api.github.com/users/DivekJohns/gists{/gist_id}", 
+  "starred_url": "https://api.github.com/users/DivekJohns/starred{/owner}{/repo}", 
+  "subscriptions_url": "https://api.github.com/users/DivekJohns/subscriptions", 
+  "organizations_url": "https://api.github.com/users/DivekJohns/orgs", 
+  "repos_url": "https://api.github.com/users/DivekJohns/repos", 
+  "events_url": "https://api.github.com/users/DivekJohns/events{/privacy}", 
+  "received_events_url": "https://api.github.com/users/DivekJohns/received_events", 
+  "type": "User", "site_admin": false, 
+  "name": "Divek John", 
+  "company": null,
+   "blog": "www.divek.rf.gd", 
+   "location": "India, Bangalore",
+    "email": null, "hireable": null, "bio": "Code Race Play ....!",
+     "public_repos": 7,
+      "public_gists": 0, 
+      "followers": 3, 
+      "following": 1, 
+      "created_at": "2018-05-15T08:18:55Z",
+      "updated_at": "2018-08-08T02:30:57Z" }
+ -->
+
+<div class="row">
+  <div class="col-6" >
+    <a href="{{profile?.id}}">This is is</a>
+    <img src="{{profile?.avatar_url}}">
+    <p>{{profile?.bio}}</p>
+    <p>{{profile?.html_url}}</p>   
+  </div>
+</div>

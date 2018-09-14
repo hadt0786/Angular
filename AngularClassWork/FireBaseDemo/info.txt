@@ -1,0 +1,6 @@
+ apiKey: "AIzaSyATiAkH3bBk_ua5cpxZ8mcN0zrZbdwl1hc",
+    authDomain: "coursename-f1728.firebaseapp.com",
+    databaseURL: "https://coursename-f1728.firebaseio.com",
+    projectId: "coursename-f1728",
+    storageBucket: "coursename-f1728.appspot.com",
+    messagingSenderId: "978486032114"

@@ -1,0 +1,26 @@
+<p>
+  firebasecomponent works!
+</p>
+
+ <h1> Angular integration with Firebase </h1>
+<ul>
+ <li *ngFor="let item of items | async">
+{{ item.coursename }}  {{item.duration}}
+</li>
+<button (click)="fbAddCourses()">Add</button>
+</ul>
+
+<button (click)="fbDeleteCourses()">Delete</button>
+
+<button (click)=" firebaseAddCourse()">Fb Update Auto</button>
+
+
+
+<button (click)="fbUpdateCourse()">Update</button>
+
+<ul>
+  <div *ngFor = "let item of items | async">
+   {{item.coursename}} --> {{item.duration}}
+    <button (click)="firebaseDeleteCourse(item)">Delete Course</button>
+   </div>
+</ul>

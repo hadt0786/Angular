@@ -1,0 +1,71 @@
+<div [style.display]="editSignal">
+
+<div class="w3-mobile w3-card w3-margin w3-margin-right w3-animate-zoom  w3-padding w3-bar" style="width: 96%;">
+<form class="w3-bar-item">
+<input #inputdata [value]="editdata" class="w3-input w3-round w3-animate-input" type="text" style="width:45%"  placeholder="Edit Task..." >
+</form>
+<!-- @todo make it center -->
+ <div class="w3-dropdown-hover w3-bar-item">
+    <button class="w3-button w3-text-teal " >{{Category}}  <i class="fa fa-angle-down"></i></button>
+    <div class=" w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" (click)="changeCategory('Personal')" class="w3-bar-item w3-button">Personal</a>
+      <a href="#" (click)="changeCategory('Work')" class="w3-bar-item w3-button">Work</a>
+      <a href="#" (click)="changeCategory('Hobbies')"  class="w3-bar-item w3-button">Hobbies</a>
+      <a href="#" (click)="changeCategory('Vacation')"  class="w3-bar-item w3-button">Vacation</a>
+      <a href="#" (click)="changeCategory('Birthday')" class="w3-bar-item w3-button">Birthday</a>
+      <a href="#" (click)="changeCategory('Hobbies')" class="w3-bar-item w3-button">Hobbies</a>
+    </div>
+    </div>
+
+     <div class="w3-dropdown-hover w3-bar-item">
+    <button class="w3-button w3-text-teal ">{{Prority}} <i class="fa fa-angle-down"></i></button>
+    <div class=" w3-dropdown-content w3-bar-block w3-card-4 ">
+      <a href="#" (click)="changePrority('High')" class="w3-bar-item w3-button">High</a>
+      <a href="#" (click)="changePrority('Medium')"  class="w3-bar-item w3-button">Medium</a>
+      <a href="#" (click)="changePrority('Low ')" class="w3-bar-item w3-button">Low</a>
+    </div>
+
+    </div>
+       <div class="w3-bar-item">
+        <button  (click)="newdata(inputdata.value)"  class="  w3-round w3-button w3-teal">Update</button>
+        &nbsp;
+           &nbsp;
+
+        <button  class="w3-button w3-red w3-round" (click)="hideeditpanel()"> <i class="fa fa fa-close"></i></button> 
+      </div>
+
+
+</div>
+</div>
+
+<div class="w3-mobile  w3-container w3-animate-bottom">
+<table class="w3-table-all w3-card-4  ">
+    <tr class="w3-teal w3-animate-zoom">
+      <th>Task Name</th>
+      <th>
+        <div class=" w3-bar-item">
+    <div class=" w3-teal ">Category</div>
+    </div>
+ </th>
+      <th>  <div class=" w3-bar-item">
+    <div class="w3-teal ">Prority</div>
+    </div>
+  </th>
+      <th>  <div class=" w3-bar-item">
+    <div class=" w3-teal ">Option <i class="fa fa-angle-down"></i></div>
+    </div>
+
+    </th>
+    </tr>
+    <tr *ngFor="let item of items | async" class="w3-animate-opacity">
+      <td> {{ item.taskname }} </td>
+      <td> {{ item.category}}</td>
+      <td> {{ item.prority}}</td>
+      <td> <button  class="w3-button w3-red -" (click)="firebaseDeleteCourse(item)">  &#10006;</button> 
+        &nbsp;
+           &nbsp;
+        <button  class="w3-button w3-grey -" (click)="firebaseUpdateCourse(item)"> <i class="fa fa fa-edit"></i></button> 
+      </td>
+    </tr>
+  </table>
+</div>
